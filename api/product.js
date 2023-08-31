@@ -429,7 +429,7 @@ app.post("/cardinteract", async (req, res) => {
         { returnOriginal: false } // To get the updated document
       );
 
-      if (response.ok) {
+      if (response) {
         // The viewed field has been incremented by 1, you can access the updated document using response.value
         console.log("Viewed count incremented.");
       } else {
@@ -460,7 +460,7 @@ app.post("/cardinteract", async (req, res) => {
         }
       );
 
-      if (updatedDocument.ok) {
+      if (updatedDocument) {
         console.log("ok");
       } else {
         console.log("not ok");
@@ -522,7 +522,7 @@ app.post("/cardinteract", async (req, res) => {
         { returnOriginal: false } // To get the updated document
       );
 
-      if (response.ok) {
+      if (response) {
         console.log("ok mantap");
         res.status(200).json({ message: "Added to favourite" });
       } else {
@@ -577,7 +577,7 @@ app.post("/change-password", async (req, res) => {
       }
     );
 
-    if (updatedDocument.ok) {
+    if (updatedDocument) {
       console.log("Password updated successfully");
       res.status(200).json({ message: "Password updated successfully" });
     } else {
