@@ -410,9 +410,8 @@ app.post("/get/userinfo", async (req, res) => {
 });
 
 app.post("/cardinteract", async (req, res) => {
-  const clickedButton = req.headers.clickedbutton;
-  const userId = req.headers.userid;
-  const bookId = req.headers.bookid;
+
+  const {clickedButton, userId, bookId} = req.body;
 
   const objectId = new ObjectId(userId);
 
